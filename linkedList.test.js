@@ -104,7 +104,7 @@ describe("#removeAtIndex", () => {
       ll.removeAtIndex(3);
       expect(ll.length).toBe(5);
       expect(ll.getByIndex(3).value).toBe(50);
-      expect(ll.head.getByIndex(3).value).toBe(60);
+      expect(ll.getByIndex(3).next.value).toBe(60);
     });
   });
 });
