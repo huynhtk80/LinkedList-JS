@@ -79,3 +79,32 @@ describe("#removeHead", () => {
     });
   });
 });
+
+describe("#removeAtIndex", () => {
+  describe("with index less than 0", () => {
+    test("it returns null", () => {
+      const ll = LinkedList.fromValues(10, 20);
+      ll.removeAtIndex(-1);
+      expect(ll.length).toBe(2);
+    });
+  });
+  describe("with index 0", () => {
+    test("remove at head", () => {
+      const ll = LinkedList.fromValues(10, 20, 30, 40);
+      ll.removeAtIndex(0);
+      expect(ll.length).toBe(3);
+      expect(ll.head.value).toBe(20);
+      expect(ll.head.next.value).toBe(30);
+    });
+  });
+
+  describe("with index in middle", () => {
+    test("remove node at index", () => {
+      const ll = LinkedList.fromValues(10, 20, 30, 40, 50, 60);
+      ll.removeAtIndex(3);
+      expect(ll.length).toBe(5);
+      expect(ll.getByIndex(3).value).toBe(40);
+      expect(ll.head.getByIndex(3).value).toBe(50);
+    });
+  });
+});
