@@ -103,8 +103,8 @@ describe("#removeAtIndex", () => {
       const ll = LinkedList.fromValues(10, 20, 30, 40, 50, 60);
       ll.removeAtIndex(3);
       expect(ll.length).toBe(5);
-      expect(ll.getByIndex(3).value).toBe(40);
-      expect(ll.head.getByIndex(3).value).toBe(50);
+      expect(ll.getByIndex(3).value).toBe(50);
+      expect(ll.head.getByIndex(3).value).toBe(60);
     });
   });
 });
