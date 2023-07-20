@@ -33,6 +33,15 @@ export default class LinkedList {
     this.head = this.head.next;
     this.length--;
   }
+
+  removeAtIndex(index) {
+    if (index < 0) return null;
+    if (index === 0) return this.removeHead();
+    let previousNode = this.getByIndex(index - 1);
+    if (previousNode == null) return null;
+    previousNode.next = previousNode.next.next;
+    this.length--;
+  }
   print() {
     let output = "";
     let currentNode = this.head;
